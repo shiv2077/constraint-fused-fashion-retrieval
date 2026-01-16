@@ -62,3 +62,59 @@ def set_seed(seed: int) -> None:
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
     np.random.seed(seed)
+
+
+def extract_dominant_color(img: Image.Image, num_colors: int = 5) -> str:
+    """
+    Extract dominant color from image using HSV-based clustering.
+    
+    Args:
+        img: PIL Image
+        num_colors: Number of dominant colors to consider
+        
+    Returns:
+        String name of dominant color (red/blue/green/yellow/white/black/etc.)
+    """
+    from collections import Counter
+    
+    img_array = np.array(img.convert('RGB'))
+    pixels = img_array.reshape(-1, 3)
+    
+    hsv_img = np.array(img.convert('HSV'))
+    h_pixels = hsv_img.reshape(-1, 3)[:, 0]
+    
+    color_ranges = {
+        'red': [(0, 15), (345, 360)],
+        'orange': [(15, 45)],
+        'yellow': [(45, 65)],
+        'green': [(65, 155)],
+        'cyan': [(85, 100)],
+        'blue': [(100, 265)],
+        'purple': [(265, 290)],
+        'magenta': [(290, 330)],
+        'pink': [(330, 345)],
+    }
+    
+    color_counts = Counter()
+    
+    for h in h_pixels:
+        for color_name, ranges in color_ranges.items():
+            for start, end in ranges:
+                if start <= h <= end:
+                    color_counts[color_name] += 1
+                    break
+    
+    if color_counts:
+        dominant_color = color_counts.most_common(1)[0][0]
+    else:
+        dominant_color = 'neutral'
+    
+    brightness = np.mean(np.max(pixels, axis=1))
+    if brightness > 200:
+        if dominant_color == 'neutral':
+            return 'white'
+    elif brightness < 50:
+        if dominant_color == 'neutral':
+            return 'black'
+    
+    return dominant_color

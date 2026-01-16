@@ -139,3 +139,71 @@ def compute_constraint_score(
         return 1.0
     
     return satisfied_constraints / total_constraints
+
+
+def extract_atomic_probes(query: str) -> List[str]:
+    """
+    Extract atomic attribute probes from query for fine-grained reranking.
+    
+    Examples:
+        "red tie and white shirt" -> ["red tie", "white shirt"]
+        "bright yellow raincoat" -> ["bright yellow raincoat", "yellow"]
+        "blue shirt on park bench" -> ["blue shirt", "park bench"]
+    
+    Args:
+        query: Natural language query
+        
+    Returns:
+        List of atomic probes (noun phrases with attributes)
+    """
+    probes = []
+    query_lower = query.lower()
+    
+    # Common color+garment combinations
+    for color in COLOR_VOCAB:
+        for garment in GARMENT_VOCAB:
+            phrase = f"{color} {garment}"
+            if phrase in query_lower:
+                probes.append(phrase)
+    
+    # Common color+context combinations
+    for color in COLOR_VOCAB:
+        for context in CONTEXT_VOCAB:
+            phrase = f"{color} {context}"
+            if phrase in query_lower:
+                probes.append(phrase)
+    
+    # Standalone colors with emphasis (bright/dark/light)
+    for intensity in ['bright', 'dark', 'light', 'pale']:
+        for color in COLOR_VOCAB:
+            phrase = f"{intensity} {color}"
+            if phrase in query_lower:
+                probes.append(phrase)
+    
+    # Context phrases (multi-word)
+    context_phrases = [
+        'modern office', 'formal setting', 'park bench', 'city walk',
+        'beach outfit', 'business attire', 'casual outfit'
+    ]
+    for phrase in context_phrases:
+        if phrase in query_lower:
+            probes.append(phrase)
+    
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_probes = []
+    for p in probes:
+        if p not in seen:
+            unique_probes.append(p)
+            seen.add(p)
+    
+    # If no probes extracted, use single-word colors and garments
+    if not unique_probes:
+        for color in COLOR_VOCAB:
+            if color in query_lower:
+                unique_probes.append(color)
+        for garment in GARMENT_VOCAB:
+            if garment in query_lower:
+                unique_probes.append(garment)
+    
+    return unique_probes[:5]  # Limit to top 5 probes

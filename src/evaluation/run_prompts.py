@@ -72,6 +72,10 @@ def run_evaluation(
                     'cons_score': r['cons_score'],
                     'final_score': r['final_score'],
                     'penalty_applied': r.get('penalty_applied', False),
+                    'dominant_color': r.get('dominant_color', 'unknown'),
+                    'color_match': r.get('color_match', 'none'),
+                    'matched_probes': r.get('matched_probes', []),
+                    'probe_scores': r.get('probe_scores', []),
                 }
                 for j, r in enumerate(results)
             ],
