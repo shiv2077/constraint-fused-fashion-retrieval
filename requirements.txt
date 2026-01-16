@@ -1,0 +1,15 @@
+# Core ML libraries
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.35.0
+pillow>=10.0.0
+
+# Vector search (install via conda: conda install -c pytorch -c conda-forge faiss-gpu)
+# faiss-gpu>=1.7.4
+
+# Utilities
+numpy>=1.24.0
+tqdm>=4.65.0
+
+# Optional: for CUDA support, install faiss-gpu instead of faiss-cpu
+# faiss-gpu>=1.7.4
