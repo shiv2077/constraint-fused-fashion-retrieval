@@ -1,0 +1,697 @@
+{
+  "timestamp": "2026-01-16T19:53:26.128788",
+  "config": {
+    "model_name": "google/siglip-so400m-patch14-384",
+    "itm_model": "Salesforce/blip-itm-base-coco",
+    "topn": 50,
+    "topk": 5,
+    "w_vec": 0.35,
+    "w_itm": 0.4,
+    "w_cons": 0.15,
+    "cons_penalty_threshold": 0.5,
+    "cons_penalty_factor": 0.2,
+    "seed": 42
+  },
+  "prompts": [
+    {
+      "query": "A person in a bright yellow raincoat.",
+      "main_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/e636280e96f3863157a4398c92fc299e.jpg",
+          "filename": "e636280e96f3863157a4398c92fc299e.jpg",
+          "caption": "a little girl wearing a yellow raincoat and red tights",
+          "vec_score": 0.142155259847641,
+          "itm_score": 0.9877296090126038,
+          "cons_score": 1.0,
+          "final_score": 0.5788865762017668,
+          "penalty_applied": false,
+          "dominant_color": "green",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.016161566600203514
+          ]
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/ce25fc2ea56c29c024e96686099373b5.jpg",
+          "filename": "ce25fc2ea56c29c024e96686099373b5.jpg",
+          "caption": "a woman in a yellow dress and black boots is dancing on the grass",
+          "vec_score": 0.06997063010931015,
+          "itm_score": 0.08348865061998367,
+          "cons_score": 1.0,
+          "final_score": 0.40904964064247906,
+          "penalty_applied": false,
+          "dominant_color": "yellow",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            0.004657839424908161
+          ]
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/72a009d870e9aa60b9c47e3dc1457d1e.jpg",
+          "filename": "72a009d870e9aa60b9c47e3dc1457d1e.jpg",
+          "caption": "a woman in a yellow shirt and denim shorts",
+          "vec_score": 0.06681377440690994,
+          "itm_score": 0.00035496571217663586,
+          "cons_score": 1.0,
+          "final_score": 0.3804931462858804,
+          "penalty_applied": false,
+          "dominant_color": "yellow",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            0.02786535583436489
+          ]
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/1ae9cdebd762234889e60f2c0d07a768.jpg",
+          "filename": "1ae9cdebd762234889e60f2c0d07a768.jpg",
+          "caption": "a woman in a yellow coat and white turtle neck sweater",
+          "vec_score": 0.07202999293804169,
+          "itm_score": 0.30420222878456116,
+          "cons_score": 1.0,
+          "final_score": 0.29974233835935593,
+          "penalty_applied": false,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.09140379726886749
+          ]
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/1d28435f6cabcd0654ab3b4f11c15c0c.jpg",
+          "filename": "1d28435f6cabcd0654ab3b4f11c15c0c.jpg",
+          "caption": "a woman in a yellow dress walks down the runway",
+          "vec_score": 0.08611133694648743,
+          "itm_score": 0.0036675992887467146,
+          "cons_score": 1.0,
+          "final_score": 0.2687468094937503,
+          "penalty_applied": false,
+          "dominant_color": "orange",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.4285632073879242
+          ]
+        }
+      ],
+      "baseline_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/e636280e96f3863157a4398c92fc299e.jpg",
+          "filename": "e636280e96f3863157a4398c92fc299e.jpg",
+          "caption": "a little girl wearing a yellow raincoat and red tights",
+          "vec_score": 0.142155259847641,
+          "final_score": 0.142155259847641
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/729331a4d925fefce91c66918f4a14eb.jpg",
+          "filename": "729331a4d925fefce91c66918f4a14eb.jpg",
+          "caption": "a woman in a yellow top and black jacket",
+          "vec_score": 0.12910738587379456,
+          "final_score": 0.12910738587379456
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/765d5b5f4b67374f4487ba4d99020d65.jpg",
+          "filename": "765d5b5f4b67374f4487ba4d99020d65.jpg",
+          "caption": "a man in yellow pants and a white shirt walks down the street",
+          "vec_score": 0.10683189332485199,
+          "final_score": 0.10683189332485199
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/a3e5fa328e54f1ae3c2021ab55530f70.jpg",
+          "filename": "a3e5fa328e54f1ae3c2021ab55530f70.jpg",
+          "caption": "a model walks the runway at the fashion show",
+          "vec_score": 0.105691097676754,
+          "final_score": 0.105691097676754
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/ef9dae290756a8dbcb1cde404da00a1a.jpg",
+          "filename": "ef9dae290756a8dbcb1cde404da00a1a.jpg",
+          "caption": "a model walks the runway at the fashion show",
+          "vec_score": 0.10364537686109543,
+          "final_score": 0.10364537686109543
+        }
+      ]
+    },
+    {
+      "query": "Professional business attire inside a modern office.",
+      "main_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/fca7000d1b2db825d5b56db79b95c61c.jpg",
+          "filename": "fca7000d1b2db825d5b56db79b95c61c.jpg",
+          "caption": "a man sitting at his desk in an office",
+          "vec_score": 0.07881008088588715,
+          "itm_score": 0.47454482316970825,
+          "cons_score": 0.25,
+          "final_score": 0.0579598892480135,
+          "penalty_applied": true,
+          "dominant_color": "orange",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.258816659450531,
+            0.020367249846458435
+          ]
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/cd0f34921f96592811ff3a3776fa0444.jpg",
+          "filename": "cd0f34921f96592811ff3a3776fa0444.jpg",
+          "caption": "a man standing in front of a glass door",
+          "vec_score": 0.07928052544593811,
+          "itm_score": 0.3837273418903351,
+          "cons_score": 0.0,
+          "final_score": 0.03867915370501578,
+          "penalty_applied": true,
+          "dominant_color": "orange",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.08467467874288559,
+            0.012578504160046577
+          ]
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/6fe199d9875bd01b8361d7f0d5d4c071.jpg",
+          "filename": "6fe199d9875bd01b8361d7f0d5d4c071.jpg",
+          "caption": "a man in a suit and tie standing in an office",
+          "vec_score": 0.07122541964054108,
+          "itm_score": 0.20597031712532043,
+          "cons_score": 0.25,
+          "final_score": 0.034023039080202586,
+          "penalty_applied": true,
+          "dominant_color": "yellow",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.04756655544042587,
+            0.1548188179731369
+          ]
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/ee6570e9c63dc94d7af51a4848641fb2.jpg",
+          "filename": "ee6570e9c63dc94d7af51a4848641fb2.jpg",
+          "caption": "a woman in a blue dress standing in front of a crowd",
+          "vec_score": 0.0749870091676712,
+          "itm_score": 0.20067666471004486,
+          "cons_score": 0.0,
+          "final_score": 0.022729982482269408,
+          "penalty_applied": true,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.02443823404610157,
+            0.03263211250305176
+          ]
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/e4b89683513b3d818e05673b98d1dd6c.jpg",
+          "filename": "e4b89683513b3d818e05673b98d1dd6c.jpg",
+          "caption": "a woman standing in front of a poster",
+          "vec_score": 0.07219047844409943,
+          "itm_score": 0.13550181686878204,
+          "cons_score": 0.0,
+          "final_score": 0.0161922263292945,
+          "penalty_applied": true,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.0009329160093329847,
+            0.011016983538866043
+          ]
+        }
+      ],
+      "baseline_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/ac9cf5f349291912f5a973202b51da55.jpg",
+          "filename": "ac9cf5f349291912f5a973202b51da55.jpg",
+          "caption": "a woman with red hair and a black jacket",
+          "vec_score": 0.09549783170223236,
+          "final_score": 0.09549783170223236
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/9c0aee7bd2e5b9c8fb1893a689f1f6be.jpg",
+          "filename": "9c0aee7bd2e5b9c8fb1893a689f1f6be.jpg",
+          "caption": "a woman standing in front of a door holding a cup",
+          "vec_score": 0.09110194444656372,
+          "final_score": 0.09110194444656372
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/21c52aa89dbf9b2be2089c20cf1d987d.jpg",
+          "filename": "21c52aa89dbf9b2be2089c20cf1d987d.jpg",
+          "caption": "a model walks the runway at the fashion show",
+          "vec_score": 0.08632288128137589,
+          "final_score": 0.08632288128137589
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/1a3b75fa84d23692f516ad00fe2ae2fc.jpg",
+          "filename": "1a3b75fa84d23692f516ad00fe2ae2fc.jpg",
+          "caption": "a woman wearing a black velvet jacket and white shirt",
+          "vec_score": 0.08479242026805878,
+          "final_score": 0.08479242026805878
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/7cc001c4460c9b8959fc6f607944bdca.jpg",
+          "filename": "7cc001c4460c9b8959fc6f607944bdca.jpg",
+          "caption": "a woman standing in front of a glass wall",
+          "vec_score": 0.08247765898704529,
+          "final_score": 0.08247765898704529
+        }
+      ]
+    },
+    {
+      "query": "Someone wearing a blue shirt sitting on a park bench.",
+      "main_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/d9c27d7e3de5f11bae1f2b35b4f80ff4.jpg",
+          "filename": "d9c27d7e3de5f11bae1f2b35b4f80ff4.jpg",
+          "caption": "a man in a blue shirt holding a baseball bat",
+          "vec_score": 0.09168703109025955,
+          "itm_score": 8.052182238316163e-05,
+          "cons_score": 1.0,
+          "final_score": 0.4023968721463461,
+          "penalty_applied": false,
+          "dominant_color": "blue",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            0.16212792694568634,
+            6.569334072992206e-05
+          ]
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/fa6fe8a772afec21850eaf4cf5fc72fd.jpg",
+          "filename": "fa6fe8a772afec21850eaf4cf5fc72fd.jpg",
+          "caption": "a woman in shorts and a blue blouse",
+          "vec_score": 0.08345915377140045,
+          "itm_score": 6.942081381566823e-05,
+          "cons_score": 0.5,
+          "final_score": 0.3078432171812892,
+          "penalty_applied": false,
+          "dominant_color": "blue",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            0.028602859005331993,
+            0.0002351012808503583
+          ]
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/fbde6eabfb9fdf161ab493c6a76af261.jpg",
+          "filename": "fbde6eabfb9fdf161ab493c6a76af261.jpg",
+          "caption": "a woman in a pink dress sitting on a blue chair",
+          "vec_score": 0.07987579703330994,
+          "itm_score": 0.00013924477389082313,
+          "cons_score": 0.5,
+          "final_score": 0.30347897627798376,
+          "penalty_applied": false,
+          "dominant_color": "blue",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            0.0012147357920184731,
+            0.00251925946213305
+          ]
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/c56ae5ccf4fd933378abeed9db33792e.jpg",
+          "filename": "c56ae5ccf4fd933378abeed9db33792e.jpg",
+          "caption": "a woman in a blue dress and black shoes is standing on the street",
+          "vec_score": 0.07661519944667816,
+          "itm_score": 8.783338125795126e-05,
+          "cons_score": 0.5,
+          "final_score": 0.30250749421029466,
+          "penalty_applied": false,
+          "dominant_color": "blue",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            0.005004358943551779,
+            0.00025196946808137
+          ]
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/4ed56e93ed6d3f48f669ef07e22d4ce5.jpg",
+          "filename": "4ed56e93ed6d3f48f669ef07e22d4ce5.jpg",
+          "caption": "a young man wearing a blue jacket and striped shirt",
+          "vec_score": 0.0922481119632721,
+          "itm_score": 0.00017503550043329597,
+          "cons_score": 1.0,
+          "final_score": 0.16355460453312845,
+          "penalty_applied": false,
+          "dominant_color": "orange",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.008718769997358322,
+            0.0008632391691207886
+          ]
+        }
+      ],
+      "baseline_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/ecb9073d265f18598c61f21d10098339.jpg",
+          "filename": "ecb9073d265f18598c61f21d10098339.jpg",
+          "caption": "a young man sitting on a white chair",
+          "vec_score": 0.14120784401893616,
+          "final_score": 0.14120784401893616
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/65de59ba6cf469846c2ccc56ed8e06a0.jpg",
+          "filename": "65de59ba6cf469846c2ccc56ed8e06a0.jpg",
+          "caption": "a man sitting on a pile of wood",
+          "vec_score": 0.12594184279441833,
+          "final_score": 0.12594184279441833
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/458aec6dd827b8585dbfeeb7bd4cf4c9.jpg",
+          "filename": "458aec6dd827b8585dbfeeb7bd4cf4c9.jpg",
+          "caption": "a man sitting on a bench in front of a stone building",
+          "vec_score": 0.1223495751619339,
+          "final_score": 0.1223495751619339
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/620859fa8ef3a9f325a2208846866053.jpg",
+          "filename": "620859fa8ef3a9f325a2208846866053.jpg",
+          "caption": "a woman sitting on a bench using her laptop",
+          "vec_score": 0.11965049803256989,
+          "final_score": 0.11965049803256989
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/d788b5920905566d4a57247b2ffb7d26.jpg",
+          "filename": "d788b5920905566d4a57247b2ffb7d26.jpg",
+          "caption": "a woman laying on a bench in the street",
+          "vec_score": 0.11580781638622284,
+          "final_score": 0.11580781638622284
+        }
+      ]
+    },
+    {
+      "query": "Casual weekend outfit for a city walk.",
+      "main_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/f85cf6884f138a76a79ee883372007a8.jpg",
+          "filename": "f85cf6884f138a76a79ee883372007a8.jpg",
+          "caption": "a woman walking down the street carrying a brown bag",
+          "vec_score": 0.11909908801317215,
+          "itm_score": 0.6189999580383301,
+          "cons_score": 0.0,
+          "final_score": 0.058952940404415136,
+          "penalty_applied": true,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.021920152008533478
+          ]
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/d04cf49d93f1bbd614f2737b43b926df.jpg",
+          "filename": "d04cf49d93f1bbd614f2737b43b926df.jpg",
+          "caption": "a man in a suit leaning against a wall",
+          "vec_score": 0.12067300826311111,
+          "itm_score": 0.5147672891616821,
+          "cons_score": 0.0,
+          "final_score": 0.058903523311018946,
+          "penalty_applied": true,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.1855005919933319
+          ]
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/d6691a0689a75aab59dfc7c05c041093.jpg",
+          "filename": "d6691a0689a75aab59dfc7c05c041093.jpg",
+          "caption": "a woman walking down the street wearing a black top and striped skirt",
+          "vec_score": 0.11868242919445038,
+          "itm_score": 0.5540428757667542,
+          "cons_score": 0.0,
+          "final_score": 0.05459255017340184,
+          "penalty_applied": true,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.03922700136899948
+          ]
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/3b090c8c5228647a7c486ed9f1b14309.jpg",
+          "filename": "3b090c8c5228647a7c486ed9f1b14309.jpg",
+          "caption": "a woman in a gray dress and pink shoes",
+          "vec_score": 0.1189175471663475,
+          "itm_score": 0.50429368019104,
+          "cons_score": 0.0,
+          "final_score": 0.0493932923860848,
+          "penalty_applied": true,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.014511393383145332
+          ]
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/af2a05e4eef6269e949bc807f71ecd3a.jpg",
+          "filename": "af2a05e4eef6269e949bc807f71ecd3a.jpg",
+          "caption": "a woman walking down the street talking on her cell",
+          "vec_score": 0.11805875599384308,
+          "itm_score": 0.45361819863319397,
+          "cons_score": 0.0,
+          "final_score": 0.04523349771276117,
+          "penalty_applied": true,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.013598578050732613
+          ]
+        }
+      ],
+      "baseline_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/fb97ca060c9d19671dcafceeb33c3794.jpg",
+          "filename": "fb97ca060c9d19671dcafceeb33c3794.jpg",
+          "caption": "a woman in a white dress and black hat walking down an alley",
+          "vec_score": 0.1460093855857849,
+          "final_score": 0.1460093855857849
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/362bf5c0a450f2bd363794bcd51950b8.jpg",
+          "filename": "362bf5c0a450f2bd363794bcd51950b8.jpg",
+          "caption": "a woman in a white lace skirt and black tank top",
+          "vec_score": 0.14078831672668457,
+          "final_score": 0.14078831672668457
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/54cc806a05ebd88048485d929f91fe7c.jpg",
+          "filename": "54cc806a05ebd88048485d929f91fe7c.jpg",
+          "caption": "a woman in white pants and striped sweater holding a cup of coffee",
+          "vec_score": 0.1400660276412964,
+          "final_score": 0.1400660276412964
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/f06777ee045a0762aad3a7ec3111b864.jpg",
+          "filename": "f06777ee045a0762aad3a7ec3111b864.jpg",
+          "caption": "a man standing on the sidewalk in front of a brick building",
+          "vec_score": 0.1362243890762329,
+          "final_score": 0.1362243890762329
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/58272038ffbaf97782e870d7283a3ee7.jpg",
+          "filename": "58272038ffbaf97782e870d7283a3ee7.jpg",
+          "caption": "a model walks the runway at the fashion show",
+          "vec_score": 0.13301819562911987,
+          "final_score": 0.13301819562911987
+        }
+      ]
+    },
+    {
+      "query": "A red tie and a white shirt in a formal setting.",
+      "main_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/daf5e5c58d573f7b7d7d64ae30bdd4b5.jpg",
+          "filename": "daf5e5c58d573f7b7d7d64ae30bdd4b5.jpg",
+          "caption": "a man in a white shirt and black pants standing on a red carpet",
+          "vec_score": 0.09377605468034744,
+          "itm_score": 0.00029461481608450413,
+          "cons_score": 0.6,
+          "final_score": 0.10755378444038795,
+          "penalty_applied": false,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            0.00037768943002447486,
+            0.050723157823085785,
+            0.004270985256880522
+          ]
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/004e9e21cd1aca568a8ffc77a54638ce.jpg",
+          "filename": "004e9e21cd1aca568a8ffc77a54638ce.jpg",
+          "caption": "a model in a red skirt and white shirt",
+          "vec_score": 0.04858832061290741,
+          "itm_score": 1.3053963812126312e-05,
+          "cons_score": 0.6,
+          "final_score": 0.08779013394173792,
+          "penalty_applied": false,
+          "dominant_color": "blue",
+          "color_match": "none",
+          "matched_probes": [],
+          "probe_scores": [
+            1.4366834875545464e-05,
+            0.007867492735385895,
+            0.0014661421300843358
+          ]
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/280a76210b66ab30456070b315ac81e7.jpg",
+          "filename": "280a76210b66ab30456070b315ac81e7.jpg",
+          "caption": "a man in a suit and tie standing on a red carpet",
+          "vec_score": 0.0538187250494957,
+          "itm_score": 0.0003942588227801025,
+          "cons_score": 0.4,
+          "final_score": 0.05676732780196472,
+          "penalty_applied": true,
+          "dominant_color": "red",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            0.04399029538035393,
+            0.0004062422376591712,
+            0.013712042942643166
+          ]
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/782f4ed69368eedc63b33ffed5c34cb8.jpg",
+          "filename": "782f4ed69368eedc63b33ffed5c34cb8.jpg",
+          "caption": "a woman in jeans and a white shirt is walking down the street",
+          "vec_score": 0.05738116800785065,
+          "itm_score": 4.637156234821305e-05,
+          "cons_score": 0.4,
+          "final_score": 0.05625158853603838,
+          "penalty_applied": true,
+          "dominant_color": "red",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            6.345444126054645e-05,
+            0.013485456816852093,
+            0.00032291177194565535
+          ]
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/62c2a58de9a97c754cde718fb409402e.jpg",
+          "filename": "62c2a58de9a97c754cde718fb409402e.jpg",
+          "caption": "a man in a suit and tie standing on a red carpet",
+          "vec_score": 0.052945349365472794,
+          "itm_score": 3.060648305108771e-05,
+          "cons_score": 0.4,
+          "final_score": 0.05572250569001457,
+          "penalty_applied": true,
+          "dominant_color": "red",
+          "color_match": "exact",
+          "matched_probes": [],
+          "probe_scores": [
+            2.75949187198421e-05,
+            6.414503877749667e-05,
+            0.0007412229897454381
+          ]
+        }
+      ],
+      "baseline_results": [
+        {
+          "rank": 1,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/daf5e5c58d573f7b7d7d64ae30bdd4b5.jpg",
+          "filename": "daf5e5c58d573f7b7d7d64ae30bdd4b5.jpg",
+          "caption": "a man in a white shirt and black pants standing on a red carpet",
+          "vec_score": 0.09377605468034744,
+          "final_score": 0.09377605468034744
+        },
+        {
+          "rank": 2,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/b9f5719011b18df11bf555cd81b20b73.jpg",
+          "filename": "b9f5719011b18df11bf555cd81b20b73.jpg",
+          "caption": "a man in a suit sitting at a table",
+          "vec_score": 0.09055200219154358,
+          "final_score": 0.09055200219154358
+        },
+        {
+          "rank": 3,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/2df8a3cbaf17a7e8441cf3f4bc73824c.jpg",
+          "filename": "2df8a3cbaf17a7e8441cf3f4bc73824c.jpg",
+          "caption": "a person standing in front of a white wall",
+          "vec_score": 0.08972737938165665,
+          "final_score": 0.08972737938165665
+        },
+        {
+          "rank": 4,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/e6879af6721dfaff3c6e03dc0512e805.jpg",
+          "filename": "e6879af6721dfaff3c6e03dc0512e805.jpg",
+          "caption": "a young man sits on a rail in front of a graffiti covered building",
+          "vec_score": 0.08720358461141586,
+          "final_score": 0.08720358461141586
+        },
+        {
+          "rank": 5,
+          "path": "/home/shiv2077/dev/constraint-fused-fashion-retrieval/val_test2020/test/6cbdfad69032913bb177428379ed137e.jpg",
+          "filename": "6cbdfad69032913bb177428379ed137e.jpg",
+          "caption": "a woman in a white dress holding an umbrella",
+          "vec_score": 0.07911768555641174,
+          "final_score": 0.07911768555641174
+        }
+      ]
+    }
+  ]
+}

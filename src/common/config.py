@@ -33,12 +33,12 @@ class SearchConfig:
     itm_model: str = "Salesforce/blip-itm-base-coco"
     
     # Search parameters
-    topn: int = 20  # Number of candidates to retrieve (reduced for memory)
+    topn: int = 50  # Number of candidates to retrieve
     topk: int = 5   # Number of final results to return
     
     # Scoring weights
-    w_vec: float = 0.40   # Vector similarity weight
-    w_itm: float = 0.45   # Image-text matching weight
+    w_vec: float = 0.35   # Vector similarity weight
+    w_itm: float = 0.40   # Image-text matching weight
     w_cons: float = 0.15  # Constraint satisfaction weight
     
     # Constraint penalty

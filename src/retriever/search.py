@@ -174,10 +174,10 @@ def search_and_rerank(
             # Check if dominant color is in query
             if dominant_color in query_colors:
                 color_match = 'exact'
-                color_bonus = 0.15
+                color_bonus = 0.20
             else:
                 color_match = 'none'
-                color_bonus = -0.05
+                color_bonus = -0.02
         else:
             color_match = 'none'
         
@@ -192,7 +192,7 @@ def search_and_rerank(
         probe_component = 0.0
         if probe_scores:
             probe_mean = np.mean(probe_scores)
-            probe_component = 0.2 * probe_mean  # Weight for probe matching
+            probe_component = 0.25 * probe_mean  # Weight for probe matching
         
         if has_constraints and cons_score < config.cons_penalty_threshold:
             penalty = config.cons_penalty_factor
