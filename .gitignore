@@ -1,7 +1,19 @@
 # Data directories
 data/
 artifacts/
+artifacts_*/
 outputs/
+val_test2020/
+
+# Model weights
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Logs and images
+*.log
+*.png
 
 # Python
 __pycache__/

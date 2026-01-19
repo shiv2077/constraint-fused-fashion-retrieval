@@ -19,6 +19,24 @@ COLOR_VOCAB = {
     'multicolor', 'multi-color', 'colorful', 'patterned',
 }
 
+# Color synonym mapping - map variants to base color for matching
+COLOR_SYNONYMS = {
+    'crimson': 'red', 'scarlet': 'red', 'burgundy': 'red', 'maroon': 'red',
+    'navy': 'blue', 'azure': 'blue', 'cobalt': 'blue', 'indigo': 'blue', 'turquoise': 'blue', 'cyan': 'blue',
+    'emerald': 'green', 'lime': 'green', 'olive': 'green', 'teal': 'green', 'mint': 'green',
+    'gold': 'yellow', 'golden': 'yellow', 'amber': 'yellow', 'mustard': 'yellow',
+    'coral': 'orange', 'peach': 'orange', 'tangerine': 'orange',
+    'violet': 'purple', 'lavender': 'purple', 'plum': 'purple', 'magenta': 'purple',
+    'rose': 'pink', 'fuchsia': 'pink', 'salmon': 'pink',
+    'tan': 'brown', 'beige': 'brown', 'khaki': 'brown', 'chocolate': 'brown', 'coffee': 'brown',
+    'grey': 'gray', 'silver': 'gray',
+    'cream': 'white', 'ivory': 'white', 'off-white': 'white',
+}
+
+def normalize_color(color: str) -> str:
+    """Normalize color to base color for matching."""
+    return COLOR_SYNONYMS.get(color.lower(), color.lower())
+
 GARMENT_VOCAB = {
     # Tops
     'shirt', 'blouse', 't-shirt', 'tshirt', 'tee', 'top', 'tank', 'tank top',
@@ -112,7 +130,7 @@ def compute_constraint_score(
     item_tags: Dict[str, Set[str]]
 ) -> float:
     """
-    Compute constraint satisfaction score.
+    Compute constraint satisfaction score with fuzzy color matching.
     
     Args:
         query_constraints: Constraints extracted from query
@@ -130,8 +148,16 @@ def compute_constraint_score(
         
         if query_set:
             total_constraints += len(query_set)
-            # Count how many query constraints are present in the item
-            satisfied = len(query_set & item_set)
+            
+            if category == 'colors':
+                # Use normalized color matching
+                query_normalized = {normalize_color(c) for c in query_set}
+                item_normalized = {normalize_color(c) for c in item_set}
+                satisfied = len(query_normalized & item_normalized)
+            else:
+                # Exact matching for garments and contexts
+                satisfied = len(query_set & item_set)
+            
             satisfied_constraints += satisfied
     
     if total_constraints == 0:

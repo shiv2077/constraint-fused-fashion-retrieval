@@ -1,23 +1,0 @@
-nohup: ignoring input
-Monitoring indexing process (PID: 540658)...
-Will send notification when complete.
-
-[11:25:28] Progress: 0/3200 (0%)[11:25:58] Progress: 0/3200 (0%)[11:26:28] Progress: 0/3200 (0%)[11:26:58] Progress: 0/3200 (0%)[11:27:28] Progress: 0/3200 (0%)[11:27:58] Progress: 0/3200 (0%)[11:28:28] Progress: 0/3200 (0%)[11:28:58] Progress: 0/3200 (0%)[11:29:28] Progress: 0/3200 (0%)[11:29:58] Progress: 0/3200 (0%)[11:30:28] Progress: 0/3200 (0%)[11:30:58] Progress: 0/3200 (0%)[11:31:28] Progress: 0/3200 (0%)[11:31:58] Progress: 0/3200 (0%)[11:32:28] Progress: 0/3200 (0%)[11:32:59] Progress: 0/3200 (0%)[11:33:29] Progress: 0/3200 (0%)[11:33:59] Progress: 0/3200 (0%)[11:34:29] Progress: 0/3200 (0%)[11:34:59] Progress: 0/3200 (0%)[11:35:29] Progress: 0/3200 (0%)[11:35:59] Progress: 0/3200 (0%)[11:36:29] Progress: 0/3200 (0%)[11:36:59] Progress: 0/3200 (0%)[11:37:29] Progress: 0/3200 (0%)[11:37:59] Progress: 0/3200 (0%)[11:38:29] Progress: 0/3200 (0%)[11:38:59] Progress: 0/3200 (0%)[11:39:29] Progress: 0/3200 (0%)[11:39:59] Progress: 0/3200 (0%)[11:40:30] Progress: 0/3200 (0%)[11:41:00] Progress: 0/3200 (0%)[11:41:30] Progress: 0/3200 (0%)[11:42:00] Progress: 0/3200 (0%)[11:42:30] Progress: 0/3200 (0%)[11:43:00] Progress: 0/3200 (0%)[11:43:30] Progress: 0/3200 (0%)[11:44:00] Progress: 0/3200 (0%)[11:44:30] Progress: 0/3200 (0%)[11:45:00] Progress: 0/3200 (0%)[11:45:31] Progress: 0/3200 (0%)[11:46:01] Progress: 0/3200 (0%)[11:46:31] Progress: 0/3200 (0%)[11:47:01] Progress: 0/3200 (0%)[11:47:31] Progress: 0/3200 (0%)[11:48:01] Progress: 0/3200 (0%)[11:48:31] Progress: 0/3200 (0%)[11:49:01] Progress: 0/3200 (0%)[11:49:32] Progress: 0/3200 (0%)[11:50:02] Progress: 0/3200 (0%)[11:50:32] Progress: 0/3200 (0%)[11:51:02] Progress: 0/3200 (0%)[11:51:32] Progress: 0/3200 (0%)[11:52:02] Progress: 0/3200 (0%)[11:52:32] Progress: 0/3200 (0%)[11:53:02] Progress: 0/3200 (0%)[11:53:33] Progress: 0/3200 (0%)[11:54:03] Progress: 0/3200 (0%)[11:54:33] Progress: 0/3200 (0%)[11:55:03] Progress: 0/3200 (0%)[11:55:33] Progress: 0/3200 (0%)[11:56:03] Progress: 0/3200 (0%)[11:56:34] Progress: 0/3200 (0%)[11:57:04] Progress: 0/3200 (0%)[11:57:34] Progress: 0/3200 (0%)[11:58:04] Progress: 0/3200 (0%)[11:58:34] Progress: 0/3200 (0%)[11:59:04] Progress: 0/3200 (0%)[11:59:35] Progress: 0/3200 (0%)[12:00:05] Progress: 0/3200 (0%)[12:00:35] Progress: 0/3200 (0%)[12:01:05] Progress: 0/3200 (0%)
-
-🎉 Indexing Complete! 🎉
-
-(notify-send:565554): libnotify-WARNING **: 12:01:35.563: Running in confined mode, using Portal notifications. Some features and hints won't be supported
-libnotify-Message: 12:01:35.563: Category is not available when using Portal Notifications
-libnotify-Message: 12:01:35.563: App Name is not available when using Portal Notifications
-
-==========================================
-         INDEXING COMPLETE!
-==========================================
-Indexed: 3200 images
-Completed at: 12:01:35
-
-Next steps:
-  1. Run edge case tests: python test_edge_cases.py
-  2. Run full evaluation: python -m src.evaluation.run_prompts --index_dir artifacts --out_dir evaluation_final
-  3. Or run automated suite: ./wait_and_test.sh
-==========================================

@@ -53,3 +53,7 @@ class SigLIPEmbedder:
             embeddings = normalize_embeddings(embeddings)
         
         return embeddings
+    
+    def encode_text_batch(self, texts: List[str], normalize: bool = True) -> np.ndarray:
+        """Alias for encode_text that accepts a list."""
+        return self.encode_text(texts, normalize=normalize)
